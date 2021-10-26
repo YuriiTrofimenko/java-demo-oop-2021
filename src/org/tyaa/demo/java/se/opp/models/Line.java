@@ -3,7 +3,7 @@ package org.tyaa.demo.java.se.opp.models;
 import static java.lang.Math.sqrt;
 import static java.lang.Math.pow;
 
-public class Line extends AbstractShape {
+public class Line extends AbstractShape implements ILengthable {
     // public Point startPoint = new Point(0, 0); // Composition
     public Point startPoint;
     public Point endPoint;
@@ -21,6 +21,7 @@ public class Line extends AbstractShape {
         endPoint.show();
         System.out.println("******");
     }
+    @Override
     public Double getLength() {
         return sqrt(pow(endPoint.x - startPoint.x, 2) + pow(endPoint.y - startPoint.y, 2));
     }

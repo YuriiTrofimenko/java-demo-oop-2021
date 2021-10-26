@@ -3,7 +3,7 @@ package org.tyaa.demo.java.se.opp.models;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
-public class Rectangle extends AbstractShape {
+public class Rectangle extends AbstractShape implements ILengthable {
     public Point startPoint;
     public Integer width;
     public Integer height;
@@ -20,6 +20,7 @@ public class Rectangle extends AbstractShape {
         System.out.printf("Width: %s, Height: %s\n", width, height);
         System.out.println("******");
     }
+    @Override
     public Double getLength() {
         Line l1 = new Line(startPoint, new Point(startPoint.x + width, startPoint.y));
         Line l2 = new Line(startPoint, new Point(startPoint.x, startPoint.y + height));
